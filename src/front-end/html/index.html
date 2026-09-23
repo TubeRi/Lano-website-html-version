@@ -9,22 +9,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top">MIDI</a>
+    <a class="brand" href="index.html" aria-label="MIDI home">
+      <img src="../assets/images/MIDI-logo.png" alt="MIDI">
+    </a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#details">Details</a></li>
-        <li><a href="#register">Register</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a class="is-active" href="index.html#about">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="details.html">Details</a></li>
       </ul>
     </nav>
+    <div class="language-switcher" aria-label="Language">
+      <a class="is-active" href="index.html" lang="en">EN</a>
+      <a href="index.html" lang="lt">LT</a>
+    </div>
   </div>
 </header>
 
@@ -32,7 +38,6 @@
   <section class="hero">
     <div class="screens" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap">
-      <p class="eyebrow">MIDI × Esports</p>
       <h1><span>MIDI</span><span>LAN</span><span>Party</span></h1>
       <p class="lede">"MIDI LAN Party - gaming event for anyone interested featuring esports tournaments and an unforgettable LAN party experience in the heart of Vilnius."></p>
       <div class="actions">
@@ -62,40 +67,18 @@
     </div>
   </section>
 
-  <section id="details" class="details">
+  <section id="partners" class="partners">
     <div class="wrap">
-      <h2>Event details</h2>
-      <dl>
-        <dt>Date</dt><dd>To be announced</dd>
-        <dt>Place</dt><dd>Vilnius University</dd>
-        <dt>Who can join</dt><dd>Students</dd>
-        <dt>Games</dt><dd>Announced before registration opens</dd>
-      </dl>
-    </div>
-  </section>
-
-  <section id="register">
-    <div class="wrap register-grid">
-      <div>
-        <h2>Register interest</h2>
-        <p>Tell us you're in and we'll email you as soon as registration opens.</p>
+      <h2 class="section-label">Partners</h2>
+      <div class="partner-grid">
+        <article class="partner-card">
+          <div class="partner-logo"><img src="../assets/images/pepsi.png" alt="Pepsi"></div>
+        </article>
+        <article class="partner-card">
+          <div class="partner-logo"><img src="../assets/images/Brite.jpg" alt="Brite"></div>
+        </article>
       </div>
-
-      <div>
-        <form id="interest-form" novalidate>
-          <label>Name
-            <input name="name" type="text" autocomplete="name" placeholder="Your name" required>
-          </label>
-          <label>Email
-            <input name="email" type="email" autocomplete="email" placeholder="you@stud.example.lt" required>
-          </label>
-          <label>What do you want to play?
-            <textarea name="games" placeholder="CS2, League of Legends, Rocket League…"></textarea>
-          </label>
-          <button class="btn btn--solid" type="submit">Register interest</button>
-        </form>
-        <p class="thanks" id="thanks" role="status" aria-live="polite"></p>
-      </div>
+      <p class="partner-contact">Interested in sponsoring? <a href="mailto:lan@midi.lt">Get in touch &rarr;</a></p>
     </div>
   </section>
 
@@ -103,7 +86,7 @@
     <div class="wrap">
       <h2>Questions?</h2>
       <p>Have a question? Get in touch with us.</p>
-      <a class="mail" href="mailto:hello@example.com">hello@example.com</a>
+      <a class="mail" href="mailto:hello@example.com">lan@midi.lt</a>
     </div>
   </section>
 </main>
@@ -112,6 +95,5 @@
   <div class="wrap">© <span id="year">2026</span> MIDI Esports · Vilnius University</div>
 </footer>
 
-<script src="../../js/main.js" defer></script>
 </body>
 </html>
