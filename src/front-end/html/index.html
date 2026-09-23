@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MIDI LAN Party</title>
+<meta name="description" content="MIDI LAN Party - gaming event for anyone interested featuring esports tournaments and an unforgettable LAN party experience in the heart of Vilnius.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">MIDI</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="screens" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wrap">
+      <p class="eyebrow">MIDI × Esports</p>
+      <h1><span>MIDI</span><span>LAN</span><span>Party</span></h1>
+      <p class="lede">"MIDI LAN Party - gaming event for anyone interested featuring esports tournaments and an unforgettable LAN party experience in the heart of Vilnius."></p>
+      <div class="actions">
+        <a class="btn btn--solid" href="#register">Register interest</a>
+        <a class="btn btn--line" href="#contact">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>One night, three reasons to come</h2>
+      <div class="pillars">
+        <div>
+          <h3>Compete</h3>
+          <p>Tournaments for the games your campus actually plays, from casual brackets to serious ladders.</p>
+        </div>
+        <div>
+          <h3>Meet</h3>
+          <p>Find teammates, rivals and friends from every faculty, sitting one desk away.</p>
+        </div>
+        <div>
+          <h3>Game through the night</h3>
+          <p>Stay for as long as you can. Bring a headset, a charger and something warm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="details" class="details">
+    <div class="wrap">
+      <h2>Event details</h2>
+      <dl>
+        <dt>Date</dt><dd>To be announced</dd>
+        <dt>Place</dt><dd>Vilnius University</dd>
+        <dt>Who can join</dt><dd>Students</dd>
+        <dt>Games</dt><dd>Announced before registration opens</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="register">
+    <div class="wrap register-grid">
+      <div>
+        <h2>Register interest</h2>
+        <p>Tell us you're in and we'll email you as soon as registration opens.</p>
+      </div>
+
+      <div>
+        <form id="interest-form" novalidate>
+          <label>Name
+            <input name="name" type="text" autocomplete="name" placeholder="Your name" required>
+          </label>
+          <label>Email
+            <input name="email" type="email" autocomplete="email" placeholder="you@stud.example.lt" required>
+          </label>
+          <label>What do you want to play?
+            <textarea name="games" placeholder="CS2, League of Legends, Rocket League…"></textarea>
+          </label>
+          <button class="btn btn--solid" type="submit">Register interest</button>
+        </form>
+        <p class="thanks" id="thanks" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Questions?</h2>
+      <p>Have a question? Get in touch with us.</p>
+      <a class="mail" href="mailto:hello@example.com">hello@example.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year">2026</span> MIDI Esports · Vilnius University</div>
+</footer>
+
+<script src="../../js/main.js" defer></script>
+</body>
+</html>

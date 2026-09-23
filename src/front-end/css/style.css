@@ -1,0 +1,187 @@
+:root {
+  /* palette */
+  --bg: #0a0a0c;
+  --surface: #111116;
+  --text: #ffffff;
+  --muted: #a9adb5;
+  --line: rgba(255, 255, 255, 0.16);
+  --accent: #2f80d8;
+
+  /* type */
+  --font: "Dosis", "Arial Narrow", "Trebuchet MS", system-ui, sans-serif;
+
+  /* ↓↓ Put your own photo here: save it as assets/images/hero.jpg, then use
+     --hero-image: url("../assets/images/hero.jpg");
+     (paths are relative to this CSS file). Then delete the
+     <div class="screens"> block in index.html. */
+  --hero-image: none;
+
+  color-scheme: dark;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 72px); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.wrap { width: min(1000px, 100% - 48px); margin-inline: auto; }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: rgba(10, 10, 12, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { font-weight: 800; font-size: 24px; letter-spacing: 0.02em; text-decoration: none; }
+.nav ul { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+.nav ul a {
+  text-decoration: none; color: var(--muted);
+  font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  transition: color 0.15s;
+}
+.nav ul a:hover { color: var(--text); }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 47px; padding: 0 28px;
+  font: 700 13px/1 var(--font); letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid transparent; border-radius: 2px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn--solid { background: #fff; color: #0a0a0c; }
+.btn--solid:hover { background: #dfe6f1; }
+.btn--line { background: #0d0d10; color: #fff; border-color: rgba(255, 255, 255, 0.28); }
+.btn--line:hover { border-color: #fff; }
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  display: flex; align-items: center;
+  min-height: clamp(620px, 100svh, 860px);
+  padding: 96px 0 88px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(38% 44% at 72% 48%, rgba(47, 128, 216, 0.30), transparent 70%),
+    radial-gradient(30% 36% at 50% 42%, rgba(28, 170, 170, 0.14), transparent 70%),
+    radial-gradient(26% 34% at 92% 60%, rgba(60, 200, 150, 0.14), transparent 70%),
+    var(--hero-image);
+  background-size: auto, auto, auto, cover;
+  background-position: center;
+}
+/* darkening overlay + grain */
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(10, 10, 12, 0.80) 0%, rgba(10, 10, 12, 0.55) 55%, rgba(10, 10, 12, 0.86) 100%),
+    linear-gradient(180deg, transparent 55%, var(--bg) 100%);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0.16; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* placeholder "glowing monitors" — remove if you use a real photo */
+.screens { position: absolute; inset: 0; z-index: -2; pointer-events: none; }
+.screens i {
+  position: absolute; display: block; border-radius: 3px; transform: skewY(-5deg);
+  background: linear-gradient(160deg, rgba(47, 128, 216, 0.42), rgba(20, 60, 120, 0.06));
+  box-shadow: 0 0 90px rgba(47, 128, 216, 0.28);
+}
+.screens i:nth-child(1) { left: 63%; top: 28%; width: 22%; height: 33%; }
+.screens i:nth-child(2) { left: 41%; top: 36%; width: 13%; height: 22%; background: linear-gradient(160deg, rgba(40, 190, 190, 0.28), rgba(20, 60, 120, 0.04)); box-shadow: 0 0 80px rgba(40, 190, 190, 0.18); }
+.screens i:nth-child(3) { left: 88%; top: 47%; width: 16%; height: 30%; background: linear-gradient(160deg, rgba(70, 210, 150, 0.26), rgba(20, 60, 120, 0.04)); box-shadow: 0 0 80px rgba(70, 210, 150, 0.16); }
+
+.eyebrow {
+  margin: 0 0 20px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--accent);
+}
+h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(88px, 8.6vw, 136px);
+  line-height: 0.93;
+  letter-spacing: 0.005em;
+}
+h1 span { display: block; }
+.lede { max-width: 470px; margin: 30px 0 38px; color: var(--muted); font-size: 18px; line-height: 1.7; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* one page-load moment: the three title lines drop in */
+@media (prefers-reduced-motion: no-preference) {
+  h1 span { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  h1 span:nth-child(2) { animation-delay: 0.12s; }
+  h1 span:nth-child(3) { animation-delay: 0.24s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+}
+
+/* ---------- sections ---------- */
+section { padding: 96px 0; }
+h2 { margin: 0 0 40px; font-weight: 800; font-size: clamp(38px, 5vw, 56px); line-height: 1; }
+
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.pillars div { border-top: 2px solid var(--accent); padding-top: 20px; }
+.pillars h3 { margin: 0 0 8px; font-size: 26px; font-weight: 700; }
+.pillars p { margin: 0; color: var(--muted); }
+
+.details { background: var(--surface); }
+.details dl { display: grid; grid-template-columns: 200px 1fr; margin: 0; border-top: 1px solid var(--line); }
+.details dt, .details dd { margin: 0; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.details dt { color: var(--muted); font-weight: 600; }
+.details dd { font-size: 22px; font-weight: 500; }
+
+.register-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+.register-grid p { color: var(--muted); max-width: 380px; margin: 0; }
+form { display: grid; gap: 20px; }
+label { display: grid; gap: 8px; font-weight: 600; font-size: 15px; }
+input, textarea {
+  width: 100%; padding: 13px 14px;
+  font: 500 17px/1.4 var(--font); color: var(--text);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 2px;
+}
+input::placeholder, textarea::placeholder { color: #6d717a; }
+input:focus-visible, textarea:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+textarea { min-height: 96px; resize: vertical; }
+form .btn { justify-self: start; }
+.thanks { display: none; padding: 20px; border: 1px solid var(--accent); border-radius: 2px; font-size: 20px; font-weight: 500; }
+.thanks.show { display: block; }
+
+.contact { padding-top: 0; }
+.contact .wrap { border-top: 1px solid var(--line); padding-top: 64px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between; }
+.contact h2 { margin: 0; }
+.contact a.mail { font-size: 24px; font-weight: 600; text-decoration-thickness: 2px; text-underline-offset: 6px; text-decoration-color: var(--accent); }
+
+footer { padding: 28px 0 40px; color: var(--muted); font-size: 15px; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 760px) {
+  .nav ul { display: none; }
+  .hero { padding: 72px 0 64px; }
+  .screens i:nth-child(1) { left: 40%; top: 18%; width: 50%; height: 24%; }
+  section { padding: 64px 0; }
+  .pillars, .register-grid { grid-template-columns: 1fr; gap: 32px; }
+  .details dl { grid-template-columns: 1fr; }
+  .details dt { padding-bottom: 0; border-bottom: 0; }
+  .details dd { padding-top: 4px; }
+}
