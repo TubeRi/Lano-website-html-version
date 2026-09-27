@@ -9,11 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/desktop/index.css">
+<link rel="stylesheet" href="../css/Mobile/index.css" media="(max-width: 760px)">
 </head>
 
 <body>
-
+  
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="MIDI home">
@@ -41,28 +42,85 @@
       <h1><span>MIDI</span><span>LAN</span><span>Party</span></h1>
       <p class="lede">"MIDI LAN Party - gaming event for anyone interested featuring esports tournaments and an unforgettable LAN party experience in the heart of Vilnius."></p>
       <div class="actions">
-        <a class="btn btn--solid" href="#register">Register interest</a>
-        <a class="btn btn--line" href="#contact">Contact us</a>
+        <a class="btn btn--solid" href="#register">Register</a>
+        <a class="btn btn--line" href="#contact">.....</a>
       </div>
     </div>
   </section>
-
-  <section id="about">
-    <div class="wrap">
-      <h2>One night, three reasons to come</h2>
-      <div class="pillars">
-        <div>
-          <h3>Compete</h3>
-          <p>Tournaments for the games your campus actually plays, from casual brackets to serious ladders.</p>
-        </div>
-        <div>
-          <h3>Meet</h3>
-          <p>Find teammates, rivals and friends from every faculty, sitting one desk away.</p>
-        </div>
-        <div>
-          <h3>Game through the night</h3>
-          <p>Stay for as long as you can. Bring a headset, a charger and something warm.</p>
-        </div>
+<!-- Tournaments sliding section-->
+  <section id="about" class="tournaments" aria-labelledby="tournaments-title">
+    <div class="wrap tournaments__header">
+      <p class="eyebrow">Tournaments</p>
+      <h2 id="tournaments-title">Featured Tournaments</h2>
+    </div>
+    <div class="tournaments__viewport">
+      <div class="tournaments__track">
+        <article class="game-card game-card--gold">
+          <div class="game-card__art">
+            <span class="game-card__tag">Main</span>
+            <img src="../assets/images/game_logos/game-lol.png" alt="League of Legends logo">
+          </div>
+          <div class="game-card__details">
+            <time datetime="2026-04-10">Apr 10, 2026</time>
+            <h3>League of Legends</h3>
+            <span class="game-card__arrow" aria-hidden="true">›</span>
+          </div>
+        </article>
+        <article class="game-card game-card--orange">
+          <div class="game-card__art">
+            <span class="game-card__tag">Main</span>
+            <img src="../assets/images/game_logos/game-cs2.png" alt="Counter-Strike 2 logo">
+          </div>
+          <div class="game-card__details">
+            <time datetime="2026-04-10">Apr 10, 2026</time>
+            <h3>Counter-Strike 2</h3>
+            <span class="game-card__arrow" aria-hidden="true">›</span>
+          </div>
+        </article>
+        <article class="game-card game-card--olive">
+          <div class="game-card__art">
+            <span class="game-card__tag">Main</span>
+            <img src="../assets/images/game_logos/game-tft.png" alt="Teamfight Tactics logo">
+          </div>
+          <div class="game-card__details">
+            <time datetime="2026-04-11">Apr 11, 2026</time>
+            <h3>Teamfight Tactics</h3>
+            <span class="game-card__arrow" aria-hidden="true">›</span>
+          </div>
+        </article>
+        <article class="game-card game-card--crimson">
+          <div class="game-card__art">
+            <span class="game-card__tag">Side</span>
+            <img src="../assets/images/game_logos/game-nba.png" alt="NBA 2K logo">
+          </div>
+          <div class="game-card__details">
+            <time datetime="2026-04-10">Apr 10, 2026</time>
+            <h3>NBA 2K</h3>
+            <span class="game-card__arrow" aria-hidden="true">›</span>
+          </div>
+        </article>
+        <article class="game-card game-card--green">
+          <div class="game-card__art">
+            <span class="game-card__tag">Side</span>
+            <img src="../assets/images/game_logos/game-fifa.png" alt="FIFA logo">
+          </div>
+          <div class="game-card__details">
+            <time datetime="2026-04-10">Apr 10, 2026</time>
+            <h3>FIFA</h3>
+            <span class="game-card__arrow" aria-hidden="true">›</span>
+          </div>
+        </article>
+        <article class="game-card game-card--green">
+          <div class="game-card__art">
+            <span class="game-card__tag">Side</span>
+            <img src="../assets/images/game_logos/game-valorant.png" alt="Valorant logo">
+          </div>
+          <div class="game-card__details">
+            <time datetime="2026-04-10">Apr 10, 2026</time>
+            <h3>Valorant</h3>
+            <span class="game-card__arrow" aria-hidden="true">›</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -77,8 +135,11 @@
         <article class="partner-card">
           <div class="partner-logo"><img src="../assets/images/Brite.jpg" alt="Brite"></div>
         </article>
+        <article class="partner-card">
+          <div class="partner-logo"><img src="../assets/images/Brite.jpg" alt="Brite"></div>
+        </article>
+        
       </div>
-      <p class="partner-contact">Interested in sponsoring? <a href="mailto:lan@midi.lt">Get in touch &rarr;</a></p>
     </div>
   </section>
 

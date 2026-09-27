@@ -1,0 +1,12 @@
+@media (max-width: 760px) {
+  .nav .wrap { width: min(100% - 24px, 1000px); }
+  .nav ul { gap: 0; }
+  .nav ul a { height: 36px; padding: 0 7px; font-size: 10px; letter-spacing: 0.04em; }
+  .language-switcher { margin-left: 6px; }
+  .language-switcher a { padding: 0 6px; font-size: 10px; }
+  .brand { width: 38px; }
+  .brand img { max-width: 38px; height: 44px; }
+  section { padding: 64px 0; }
+
+  .gallery-grid { grid-template-columns: 1fr; }
+}
