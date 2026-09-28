@@ -42,7 +42,7 @@ a { color: inherit; }
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
-.nav .wrap { display: flex; align-items: center; height: 66px; }
+.nav .wrap { display: flex; align-items: center; height: 66px; width: 100%; max-width: none; margin-inline: 0; padding-inline: 50px; }
 .brand { display: inline-flex; align-items: center; width: 48px; height: 54px; text-decoration: none; }
 .brand img { display: block; width: auto; height: 50px; max-width: 48px; object-fit: contain; }
 .nav nav { margin-left: auto; }
