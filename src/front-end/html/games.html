@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Web Games | MIDI LAN Party</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/desktop/details.css">
+<link rel="stylesheet" href="../css/navigation-mobile.css" media="(max-width: 760px)">
+<link rel="stylesheet" href="../css/web-games.css">
+<script src="../JS/snake.js" defer></script>
+<script src="../JS/tetris.js" defer></script>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="MIDI home"><img src="../assets/images/MIDI-logo.png" alt="MIDI"></a>
+    <nav aria-label="Main"><ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="details.html">Details</a></li>
+      <li><a class="is-active" href="games.html" aria-current="page">Web Games</a></li>
+    </ul></nav>
+    <div class="language-switcher" aria-label="Language"><a class="is-active" href="games.html" lang="en">EN</a><a href="games.html" lang="lt">LT</a></div>
+  </div>
+</header>
+<main class="page-main games-page">
+  <div class="wrap">
+    <h1>Games</h1>
+    <p class="games-page__intro">Choose a game.</p>
+    <ul class="game-picker">
+      <li>
+        <button class="game-card game-card--snake" type="button" popovertarget="game-snake">
+          <span class="game-card__art" aria-hidden="true"></span>
+          <span class="game-card__title">Snake</span>
+        </button>
+      </li>
+      <li>
+        <button class="game-card game-card--tetris" type="button" popovertarget="game-tetris">
+          <span class="game-card__art" aria-hidden="true"></span>
+          <span class="game-card__title">Tetris</span>
+        </button>
+      </li>
+      <li>
+        <button class="game-card game-card--pacman" type="button" popovertarget="game-pacman">
+          <span class="game-card__art" aria-hidden="true"></span>
+          <span class="game-card__title">Pac-Man</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</main>
+<footer><div class="wrap">&copy; 2026 MIDI Esports · Vilnius University</div></footer>
+<section class="web-game" id="game-snake" popover aria-labelledby="game-snake-title">
+  <header class="web-game__header">
+    <h2 id="game-snake-title">Snake</h2>
+    <button class="web-game__close" type="button" popovertarget="game-snake" popovertargetaction="hide">Close</button>
+  </header>
+  <div class="web-game__stage arcade-game">
+    <p>Score <strong id="snake-score">0</strong></p>
+    <canvas class="game-board snake-game__board" id="snake-board" width="400" height="400" aria-label="Snake game board">
+      Snake requires canvas support.
+    </canvas>
+    <p id="snake-status" role="status">Press Start or use the arrow keys.</p>
+    <div class="arcade-game__actions">
+      <button class="web-game__close" id="snake-start" type="button" autofocus>Start</button>
+      <div class="arcade-game__controls" role="group" aria-label="Direction controls">
+        <button class="web-game__close" type="button" data-direction="left" aria-label="Move left">←</button>
+        <button class="web-game__close" type="button" data-direction="up" aria-label="Move up">↑</button>
+        <button class="web-game__close" type="button" data-direction="down" aria-label="Move down">↓</button>
+        <button class="web-game__close" type="button" data-direction="right" aria-label="Move right">→</button>
+      </div>
+    </div>
+  </div>
+  <dialog class="snake-result" id="snake-result" aria-labelledby="snake-result-title">
+    <h3 id="snake-result-title">Game Over</h3>
+    <div class="arcade-game__actions">
+      <button class="web-game__close" id="snake-retry" type="button" autofocus>Try Again</button>
+      <button class="web-game__close" id="snake-exit" type="button">Close</button>
+    </div>
+  </dialog>
+</section>
+
+<section class="web-game" id="game-tetris" popover aria-labelledby="game-tetris-title">
+  <header class="web-game__header">
+    <h2 id="game-tetris-title">Tetris</h2>
+    <button class="web-game__close" type="button" popovertarget="game-tetris" popovertargetaction="hide">Close</button>
+  </header>
+  <div class="web-game__stage arcade-game">
+    <p>Score <strong id="tetris-score">0</strong> · Lines <strong id="tetris-lines">0</strong></p>
+    <canvas class="game-board tetris-game__board" id="tetris-board" width="240" height="480" tabindex="-1" aria-label="Tetris game board">
+      Tetris requires canvas support.
+    </canvas>
+    <p id="tetris-status" role="status">Press Start to play.</p>
+    <p>Arrow keys to move and rotate. Space to drop.</p>
+    <div class="arcade-game__actions">
+      <button class="web-game__close" id="tetris-start" type="button" autofocus>Start</button>
+      <div class="arcade-game__controls" role="group" aria-label="Tetris controls">
+        <button class="web-game__close" type="button" data-tetris-action="left" aria-label="Move left">←</button>
+        <button class="web-game__close" type="button" data-tetris-action="right" aria-label="Move right">→</button>
+        <button class="web-game__close" type="button" data-tetris-action="down" aria-label="Move down">↓</button>
+        <button class="web-game__close" type="button" data-tetris-action="rotate">Rotate</button>
+        <button class="web-game__close" type="button" data-tetris-action="drop">Drop</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="web-game" id="game-pacman" popover aria-labelledby="game-pacman-title">
+  <header class="web-game__header">
+    <h2 id="game-pacman-title">Pac-Man</h2>
+    <button class="web-game__close" type="button" popovertarget="game-pacman" popovertargetaction="hide" autofocus>Close</button>
+  </header>
+  <div class="web-game__stage">
+    <div class="game-board game-board--pacman" aria-hidden="true">
+      <span class="game-board__shape" style="--x: 1; --y: 1; --w: 3"></span>
+      <span class="game-board__shape" style="--x: 6; --y: 1; --w: 3"></span>
+      <span class="game-board__shape" style="--x: 1; --y: 3; --h: 4"></span>
+      <span class="game-board__shape" style="--x: 3; --y: 3; --w: 4"></span>
+      <span class="game-board__shape" style="--x: 8; --y: 3; --h: 4"></span>
+      <span class="game-board__shape" style="--x: 3; --y: 6; --w: 4"></span>
+      <span class="game-board__shape" style="--x: 1; --y: 8; --w: 3"></span>
+      <span class="game-board__shape" style="--x: 6; --y: 8; --w: 3"></span>
+      <span class="game-board__shape game-board__pacman" style="--x: 2; --y: 4"></span>
+      <span class="game-board__shape game-board__ghost" style="--x: 7; --y: 5"></span>
+    </div>
+    <p>Game preview</p>
+  </div>
+</section>
+</body>
+</html>

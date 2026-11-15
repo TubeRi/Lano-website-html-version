@@ -1,0 +1,247 @@
+.games-page {
+  padding-block: clamp(40px, 8vw, 100px);
+  background:
+    linear-gradient(to right, #ffffff07 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff07 1px, transparent 1px),
+    #080809;
+  background-size: 64px 64px;
+}
+
+.games-page h1 { font-size: clamp(52px, 8vw, 96px); }
+
+.games-page__intro {
+  margin: 16px 0 32px;
+  color: var(--muted);
+}
+
+.game-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 215px), 1fr));
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.game-card {
+  --corner-cut: clamp(16px, 2vw, 24px);
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--corner-cut)) 0,
+    100% var(--corner-cut),
+    100% 100%,
+    var(--corner-cut) 100%,
+    0 calc(100% - var(--corner-cut))
+  );
+  background: #0b1018;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.game-card:hover,
+.game-card:focus-visible { background: #142238; }
+
+.game-card:focus-visible .game-card__title {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.game-card__art {
+  width: 32%;
+  aspect-ratio: 1;
+  background: var(--game-color);
+}
+
+.game-card--snake { --game-color: #65e59b; }
+.game-card--snake .game-card__art {
+  clip-path: polygon(0 12.5%, 100% 12.5%, 100% 37.5%, 25% 37.5%, 25% 87.5%, 0 87.5%);
+}
+
+.game-card--tetris { --game-color: #b47dff; }
+.game-card--tetris .game-card__art {
+  clip-path: polygon(0 17%, 100% 17%, 100% 50%, 67% 50%, 67% 83%, 33% 83%, 33% 50%, 0 50%);
+}
+
+.game-card--pacman { --game-color: #ffd950; }
+.game-card--pacman .game-card__art {
+  border-radius: 50%;
+  background: conic-gradient(var(--game-color) 55deg, transparent 55deg 125deg, var(--game-color) 125deg);
+}
+
+.game-card__title {
+  position: absolute;
+  inset-inline: 12px;
+  bottom: 12%;
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.web-game__close {
+  min-height: 44px;
+  padding-inline: 14px;
+  border: 1px solid #385574;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.web-game__close:hover { background: #253754; }
+
+.web-game {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: calc(100% - clamp(16px, 5vw, 96px));
+  height: calc(100dvh - clamp(16px, 6dvh, 80px));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: clamp(14px, 3vw, 36px);
+  overflow: auto;
+  border: 1px solid #385574;
+  border-radius: 10px;
+  background: #111722;
+  color: #fff;
+}
+
+.web-game:popover-open {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 12px;
+}
+
+.web-game::backdrop { background: rgb(0 0 0 / 82%); }
+
+.web-game__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.web-game__header h2 {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 38px);
+  line-height: 1.1;
+}
+
+.web-game__stage {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+}
+
+.web-game__stage p {
+  margin: 0;
+  color: #a9adb5;
+}
+
+.game-board {
+  position: relative;
+  width: min(68vw, 58dvh, 520px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 2px solid #385574;
+  background-color: #090e17;
+}
+
+.game-board__shape {
+  position: absolute;
+  left: calc(var(--x) * 10%);
+  top: calc(var(--y) * 10%);
+  width: calc(var(--w, 1) * 10%);
+  height: calc(var(--h, 1) * 10%);
+  background-color: var(--piece);
+}
+
+.arcade-game {
+  place-content: safe center;
+  text-align: center;
+}
+
+.snake-game__board {
+  display: block;
+  width: min(76vw, 52dvh, 520px);
+  height: auto;
+}
+
+.arcade-game__actions,
+.arcade-game__controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.arcade-game__controls button {
+  min-width: 44px;
+  padding-inline: 8px;
+  touch-action: manipulation;
+}
+
+.snake-result {
+  width: min(320px, calc(100% - 32px));
+  padding: 28px 16px;
+  border: 1px solid #385574;
+  border-radius: 10px;
+  background: #111722;
+  color: #fff;
+  text-align: center;
+}
+
+.snake-result::backdrop { background: rgb(0 0 0 / 70%); }
+
+.snake-result h3 {
+  margin: 0 0 20px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+#snake-retry {
+  background: #65e59b;
+  color: #090e17;
+}
+
+#snake-retry:hover { background: #adffc9; }
+
+.tetris-game__board {
+  display: block;
+  width: min(60vw, 26dvh, 280px);
+  height: auto;
+  aspect-ratio: 1 / 2;
+}
+
+.game-board--pacman {
+  --piece: #3876ff;
+  background-color: #070916;
+  background-image: radial-gradient(circle, #f4dfab 7%, transparent 9%);
+  background-size: 10% 10%;
+}
+
+.game-board--pacman .game-board__shape { border-radius: 15%; }
+
+.game-board--pacman .game-board__pacman {
+  border-radius: 50%;
+  background: conic-gradient(#ffd950 55deg, #070916 55deg 125deg, #ffd950 125deg);
+}
+
+.game-board--pacman .game-board__ghost {
+  border-radius: 50% 50% 10% 10%;
+  background:
+    radial-gradient(circle at 34% 40%, #fff 9%, transparent 11%),
+    radial-gradient(circle at 66% 40%, #fff 9%, transparent 11%),
+    #ff647d;
+}
+

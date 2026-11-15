@@ -1,0 +1,37 @@
+.nav .wrap {
+  width: 100%;
+  padding-inline: 12px;
+}
+
+.nav ul { gap: 0; }
+
+.nav ul a {
+  min-height: 36px;
+  height: 36px;
+  padding-inline: 6px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.nav .language-switcher { margin-left: 6px; }
+.nav .language-switcher a { padding-inline: 5px; }
+
+@media (max-width: 380px) {
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 96px); }
+
+  .nav .wrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    height: auto;
+  }
+
+  .nav nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  .nav ul { justify-content: center; }
+  .nav .language-switcher { grid-row: 1; }
+}
